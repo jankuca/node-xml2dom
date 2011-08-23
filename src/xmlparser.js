@@ -143,12 +143,18 @@ function Node() {
 	this.nodeType = 0;
 };
 
+Node.prototype.ELEMENT_NODE = 1;
+Node.prototype.TEXT_NODE = 3;
+Node.prototype.CDATA_SECTION_NODE = 4;
+Node.prototype.DOCUMENT_NODE = 9;
+
 function Text() {
 	Node.call(this);
 
 	this.nodeType = 3;
 	this.nodeValue = '';
 };
+sys.inherits(Text, Node);
 
 function CDATASection() {
 	Node.call(this);
@@ -156,6 +162,7 @@ function CDATASection() {
 	this.nodeType = 4;
 	this.nodeValue = '';
 };
+sys.inherits(CDATASection, Node);
 
 function Element() {
 	Node.call(this);
