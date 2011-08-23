@@ -48,7 +48,7 @@ XMLParser.prototype.parseNodeString_ = function (xml) {
 						node.nodeValue = '';
 						xml = xml.substr(3);
 					} else {
-						var data = xml.match(/(.*[^\\])]]>/);
+						var data = xml.match(/(.*?[^\\])]]>/);
 						node.nodeValue = data[1];
 						xml = xml.substr(data[0].length);
 					}
