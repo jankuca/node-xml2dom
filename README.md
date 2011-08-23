@@ -25,7 +25,7 @@ The resulting object follows the DOM specification. It, however, features only a
 
 The output is an instance of `Document` and contains a hierarchy of `Element`, `Text` and `CDATASection` nodes according to the original structure in the XML input.
 
-Note: Comment nodes are not featured in the output.
+Note: Comment nodes are not featured in the output. Also, the output is read-only (i.e. modifying childNodes properties does not affect firstChild or lastChild properties and setter methods such as setAttribute are not provided).
 
 ## Properties
 

@@ -175,6 +175,10 @@ function Element() {
 };
 sys.inherits(Element, Node);
 
+Element.prototype.getAttribute = function (key) {
+	return this.attributes[key];
+};
+
 function Document() {
 	Element.call(this);
 
