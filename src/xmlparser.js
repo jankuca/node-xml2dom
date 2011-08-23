@@ -134,7 +134,10 @@ XMLParser.prototype.parseNodeString_ = function (xml) {
 		}
 	}
 
-	return /** @type {Document} */ open[0];
+	var doc = open[0];
+	doc.firstChild = doc.childNodes[0];
+	doc.lastChild = doc.childNodes[doc.childNodes.length - 1];
+	return /** @type {Document} */ doc;
 };
 
 
