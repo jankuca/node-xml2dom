@@ -108,7 +108,7 @@ XMLParser.prototype.parseNodeString_ = function (xml) {
 									throw new Error('Parse error, invalid attribute value');
 								}
 								node.attributes[attr[1]] = value[1];
-								xml = xml.substr(value[0].length).replace(/^\s+/, '');
+								xml = xml.substr(value[0].length - 1).replace(/^\s+/, '');
 							}
 						} else {
 							node.attributes[attr[1]] = true;
